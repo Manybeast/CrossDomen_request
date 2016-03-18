@@ -1,0 +1,7 @@
+<header class="header">
+    <h1>{{::vm.header}}</h1>
+    <form id="todo-form" ng-submit="vm.addItem($event)">
+      <input class="new-todo" type="text" ng-model = "vm.newTodo" ng-keypress = "vm.addItem($event)" placeholder="What needs to be done?" autofocus>
+      <button class="btn btn-success" ng-click = "vm.addItem($event)">{{::vm.btnText}}</button>
+    </form>
+</header>

@@ -1,0 +1,11 @@
+<section class="main">
+    <input class="toggle-all" type="checkbox" ng-click="vm.toggleAll(completed)" ng-model="completed">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+        <li class="todo-item" ng-repeat = "item in vm.items | filter: vm.activeFilter | filter: search">
+            <input type="checkbox" class="toggle" ng-checked="item.completed" ng-click="vm.completeItem($event, item.id)">
+            <label class="todo-item title" ng-class = "{completed: item.completed}">{{item.name}}</label>
+            <button class="destroy" ng-click="vm.delete($event, item.id)"></button>
+        </li>
+    </ul>
+</section>

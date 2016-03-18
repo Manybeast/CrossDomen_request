@@ -1,0 +1,9 @@
+<section class="todoapp" ng-controller="MainController as vm">
+    <div ng-include = "'app/components/header/header.view.html'"></div>
+    <div ng-include = "'app/components/list.items/list.view.html'"></div>
+    <div ng-include = "'app/components/footer/footer.view.html'"></div>
+</section>
+<footer class="info">
+    <label class="search-todo"><strong>For search a tast type here</strong> task left</label>
+    <input class="search-todo" type="text" ng-model="search" placeholder="Type for a search here">
+</footer>
