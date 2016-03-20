@@ -9,7 +9,7 @@
   function MainController($scope, $filter, toDoModel) {
     var vm = this;
 
-    vm.header = "ToDoList";
+    vm.header = "TaskList";
     vm.newTodo = null;
     vm.btnText = 'ADD';
     vm.activeFilter = {};
@@ -18,10 +18,8 @@
 
     toDoModel.getAllItems()
       .then(function (response) {
-                vm.items = response.data;
-            }, function (reject) {
-                console.log(reject);
-            });
+          vm.items = response;
+      });
 
     $scope.$watch(function () {
       return vm.items;
@@ -42,13 +40,11 @@
             completed: false,
             id: vm.generateId()
         };
-        // vm.items.push(model);
+
         toDoModel.setItem(model)
           .then(function (response) {
-                vm.items = response.data;
-            }, function (reject) {
-                console.log(reject);
-            });
+          vm.items = response;
+          });
         vm.newTodo = null;
         // vm.addToLocalStorage(vm.items);
       }
@@ -63,22 +59,21 @@
         return Math.floor((1 + Math.random()) * 0x10000);
     };
 
-    vm.delete = function (e, id) {
-        var currentIndex = vm.items.indexOf(vm.items.filter(function (item){
-            return item.id === parseInt(id);
-        })[0]);
-
-        vm.items.splice(currentIndex, 1);
-
+    vm.delete = function (item) {
+        toDoModel.removeItem(vm.items.indexOf(item))
+          .then(function (response) {
+          vm.items = response;
+          });
         // vm.addToLocalStorage(vm.items);
     };
 
-    vm.completeItem = function (e, id) {
-      var currentIndex = vm.items.indexOf(vm.items.filter(function (item){
-        return item.id === parseInt(id);
-      })[0]);
+    vm.completeItem = function (item) {
+      vm.items[vm.items.indexOf(item)].completed = !vm.items[vm.items.indexOf(item)].completed;
 
-      vm.items[currentIndex].completed = !vm.items[currentIndex].completed;
+      toDoModel.changeItem(item, vm.items.indexOf(item))
+        .then(function (response) {
+          vm.items = response;
+        });
 
       // vm.addToLocalStorage(vm.items);
     };
