@@ -5,7 +5,7 @@
         <li class="todo-item" ng-repeat = "item in vm.items | filter: vm.activeFilter | filter: search">
             <input type="checkbox" class="toggle" ng-checked="item.completed" ng-click="vm.completeItem(item)">
             <label class="todo-item title" ng-class = "{completed: item.completed}" ng-show="true" ng-dblclick="">{{item.name}}</label>
-            <input class="todo-item title" ng-show="true" ng-model="" value="{{item.name}}">
+            <input class="todo-item title" ng-show="false" value="{{item.name}}">
             <button class="destroy" ng-click="vm.delete(item)"></button>
         </li>
     </ul>

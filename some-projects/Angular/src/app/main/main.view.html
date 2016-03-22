@@ -1,7 +1,7 @@
 <section class="todoapp" ng-controller="MainController as vm">
-    <div ng-include = "'app/components/header/header.view.html'"></div>
-    <div ng-include = "'app/components/list.items/list.view.html'"></div>
-    <div ng-include = "'app/components/footer/footer.view.html'"></div>
+    <app-header></app-header>
+    <app-list-item></app-list-item>
+    <app-footer></app-footer>
 </section>
 <footer class="info">
     <label class="search-todo"><strong>For search a tast type here</strong> task left</label>
