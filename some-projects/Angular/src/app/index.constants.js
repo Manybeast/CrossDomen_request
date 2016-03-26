@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('levelUpAngular')
+    .module('ngRouteModule')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

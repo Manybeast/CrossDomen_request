@@ -1,0 +1,26 @@
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
+        <span class="glyphicon glyphicon-home"></span> Gulp Angular
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ng-class="vm.changeActive('/')">
+          <a ng-href="#/">Home</a>
+        </li>
+        <li ng-class="vm.changeActive('/about')">
+          <a ng-href="#/about">About</a>
+        </li>
+        <li ng-class="vm.changeActive('/contact')">
+          <a ng-href="#/contact">Contact</a>
+        </li>
+        <li ng-class="vm.changeActive('/login')">
+          <a ng-href="#/login">Login</a>
+        </li>
+      </ul>      
+    </div>
+  </div>
+</nav>

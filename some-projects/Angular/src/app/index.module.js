@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('levelUpAngular', ['ngRoute', 'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'toastr']);
+    .module('ngRouteModule', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngRoute', 'toastr']);
 
 })();

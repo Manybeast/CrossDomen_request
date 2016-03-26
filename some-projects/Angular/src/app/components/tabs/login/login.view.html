@@ -1,0 +1,46 @@
+
+<div class="container">
+    <div>
+        <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </div>
+    <div class="login col-md-4 col-md-offset-4">
+        <form name="userForm">
+            <h1>Hello</h1>
+            <label>Login:</label>
+            <input
+                class="form-control"
+                type="text"
+                name="login"
+                ng-model="vm.user.login"
+                placeholder="Enter your login" 
+                required>
+            <span ng-show="userForm.login.$dirty && userForm.login.$error.required">Required</span>
+            <label>Password</label>
+            <input
+                class="form-control"
+                type="password" 
+                name="password" 
+                ng-model="vm.user.password"
+                ng-minlength="6"
+                placeholder="Enter your password" 
+                required>
+            <span ng-show="userForm.password.$dirty && userForm.password.$error.minlength">Too short</span>
+            <label>E-mail</label>
+            <input
+                class="form-control"
+                type="email" 
+                name="email" 
+                ng-model="vm.user.email"
+                placeholder="Enter your E-mail" 
+                required>
+            <span ng-show="userForm.email.$dirty && userForm.email.$error.email">not an E-mail</span>
+            <button 
+                type="submit" 
+                class="btn btn-primary" 
+                ng-disabled="userForm.$invalid" 
+                ng-click="vm.userInfo()">
+                Login
+            </button>
+        </form>
+    </div>
+</div>

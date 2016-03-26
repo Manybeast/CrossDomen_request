@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('levelUpAngular')
+    .module('ngRouteModule')
     .run(runBlock);
 
   /** @ngInject */
